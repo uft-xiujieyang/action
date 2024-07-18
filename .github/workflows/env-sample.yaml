@@ -1,0 +1,21 @@
+name: Env Context Example
+run-name: ${{ github.actor }} learning env
+on:
+  workflow_dispatch:
+env:
+  mascot: Mona
+  super_duper_var: totally_awesome
+jobs:
+  windows_job:
+    runs-on: windows-latest
+    steps:
+      - run: echo 'Hi ${{ env.mascot }} '
+      - run: echo 'Hi ${{ env.super_duper_var }} '
+        env:
+          mascot: Octocat
+  linux_job:
+    runs-on: ubuntu-latest
+    env:
+      mascot: Tux
+    steps:
+      - run: echo 'Hi ${{ env.mascot }}'
