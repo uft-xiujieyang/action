@@ -15,4 +15,4 @@ jobs:
           - 5432
     steps:
       - run: pg_isready -h localhost -p ${{job.services.postgres.ports[5432]}}
-      - run: ech "Run tests against Postgre"
+      - run: echo "Run tests against Postgre"
