@@ -10,7 +10,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - run: echo 'Hi ${{ env.mascot }} '
-      - run: echo 'Hi ${{ env.super_duper_var }} '
+      - run: echo 'Hi ${{ env.mascot }} '
         env:
           mascot: Octocat
   linux_job:
